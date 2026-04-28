@@ -27,7 +27,9 @@ public class CalculadoraIMC extends Frame {
         this.add(altura);
         this.add(boton);
         this.add(resultado);
+
         boton.addMouseListener(new EventosRaton(peso, altura, resultado));
+
         this.setVisible(true);
 
     }
