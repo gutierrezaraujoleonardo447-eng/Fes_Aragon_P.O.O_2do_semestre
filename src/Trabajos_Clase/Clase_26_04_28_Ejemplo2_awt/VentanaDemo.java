@@ -1,4 +1,4 @@
-package Trabajos_Clase.Clase_26_04_28;
+package Trabajos_Clase.Clase_26_04_28_Ejemplo2_awt;
 
 import java.awt.*;
 import java.awt.event.MouseAdapter;
@@ -6,29 +6,37 @@ import java.awt.event.MouseEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
-public class MiVentana extends Frame {
+public class VentanaDemo extends Frame {
     private Label etiqueta;
     private TextField entrada;
     private Button boton;
     private Label salida;
 
-    public MiVentana()  {
-        super ("Mi ventana");
-        etiqueta = new Label("Ingrese un nombre");
+
+
+
+    public VentanaDemo()  {
+        super("Mi Ventana");
+        setLayout(new FlowLayout());
+        setSize(800,600);
+        setVisible(true);
+
+        // Componentes
+        etiqueta = new Label("Ingresa un nombre: ");
         entrada = new TextField(20);
         boton = new Button("Saludar");
         salida = new Label(" ");
 
-        this.add(etiqueta);
-        this.add(entrada);
-        this.add(boton);
-        this.add(salida);
-        entrada.setText("Tu nombre....");
-        System.out.println(etiqueta.getText());
+        // Agregar componentes
+        add(etiqueta);
+        add(entrada);
+        add(boton);
+        add(salida);
 
-        setSize(800,400);
-        setLayout(new FlowLayout());
-        this.addWindowListener(new WindowAdapter() {
+        //entrada.setText("Tú nombre es  ");
+        //System.out.println(etiqueta.getText());
+
+        this.addWindowListener( new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {
                 System.exit(0);
@@ -38,10 +46,13 @@ public class MiVentana extends Frame {
         boton.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                salida.setText("Hola" + entrada.getText());
+                salida.setText("Hola " + entrada.getText());
                 pack();
+                System.out.println(salida.getText());
             }
         });
-        setVisible(true);
+
+
+
     }
 }
