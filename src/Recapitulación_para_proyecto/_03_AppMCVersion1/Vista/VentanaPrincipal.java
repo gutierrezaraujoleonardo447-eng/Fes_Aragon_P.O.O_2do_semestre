@@ -1,5 +1,7 @@
 package Recapitulación_para_proyecto._03_AppMCVersion1.Vista;
 
+import Recapitulación_para_proyecto._03_AppMCVersion1.Modelo.SmartPhone;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -19,6 +21,7 @@ public class VentanaPrincipal extends JFrame {
     private JLabel lblPrecio;
     private JTextField txtPrecio;
     private JButton btnAgregarPhone;
+    private JScrollPane scrollPane;
     private JTable tblPhone;
 
     public VentanaPrincipal() {
@@ -46,8 +49,10 @@ public class VentanaPrincipal extends JFrame {
         lblModelo = new JLabel("Modelo: ");
         txtModelo = new JTextField(8);
         btnAgregarPhone = new JButton("Agregar phone");
+        scrollPane = new JScrollPane();
+        scrollPane.setPreferredSize(new Dimension(400,200));
         tblPhone = new JTable();
-
+        scrollPane.setViewportView(tblPhone);
         // agregar componentes al panel 1
         pnlPanel1.add(lblNombre);
         pnlPanel1.add(txtNombre);
@@ -57,10 +62,10 @@ public class VentanaPrincipal extends JFrame {
         pnlPanel1.add(txtMarca);
         pnlPanel1.add(lblModelo);
         pnlPanel1.add(txtModelo);
-        pnlPanel1.add(btnAgregarPhone);
         pnlPanel1.add(lblPrecio);
         pnlPanel1.add(txtPrecio);
-        pnlPanel2.add(tblPhone);
+        pnlPanel1.add(btnAgregarPhone);
+        pnlPanel2.add(scrollPane);
 
         // agregar panel 1 y 2 al Frame
         this.getContentPane().add(pnlPanel1,0);
@@ -181,4 +186,15 @@ public class VentanaPrincipal extends JFrame {
     public void setTblPhone(JTable tblPhone) {
         this.tblPhone = tblPhone;
     }
+    public void limpiar(){
+        txtMarca.setText("");
+        txtModelo.setText("");
+        txtPrecio.setText("");
+
+    }
+
+    public boolean validar(){
+        return !txtMarca.getText().isEmpty() && !txtModelo.getText().isEmpty() && !txtPrecio.getText().isEmpty();
+    }
+
 }

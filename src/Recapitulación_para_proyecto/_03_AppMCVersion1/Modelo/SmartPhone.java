@@ -10,6 +10,7 @@ public class SmartPhone {
 public SmartPhone(String marca, String modelo, float precio) {
         this.marca = marca;
         this.modelo = modelo;
+        this.precio = precio;
 }
     public String getMarca() {
         return marca;
@@ -33,5 +34,14 @@ public SmartPhone(String marca, String modelo, float precio) {
 
     public void setPrecio(float precio) {
         this.precio = precio;
+    }
+
+    @Override
+    public String toString() {
+        return "SmartPhone{" +
+                "marca='" + marca + '\'' +
+                ", modelo='" + modelo + '\'' +
+                ", precio=" + precio +
+                '}';
     }
 }

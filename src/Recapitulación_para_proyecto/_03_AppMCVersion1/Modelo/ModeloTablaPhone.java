@@ -22,7 +22,7 @@ public class ModeloTablaPhone implements TableModel {
 
     @Override
     public int getColumnCount() {
-        return 2;
+        return 3;
     }
 
     @Override
@@ -101,4 +101,12 @@ public class ModeloTablaPhone implements TableModel {
     public void setLista(ArrayList<SmartPhone> lista) {
         this.lista = lista;
     }
+
+    public void agregarTelefono(SmartPhone tel){
+        this.lista.add(tel);
+    }
+    public SmartPhone getTelefono(int index){
+        return this.lista.get(index);
+    }
+
 }
