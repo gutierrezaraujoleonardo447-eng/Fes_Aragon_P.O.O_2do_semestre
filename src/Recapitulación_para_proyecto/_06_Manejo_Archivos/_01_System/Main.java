@@ -1,4 +1,4 @@
-package Recapitulación_para_proyecto._06_Manejo_Archivos.System;
+package Recapitulación_para_proyecto._06_Manejo_Archivos._01_System;
 
 public class Main {
     public static void main(String[] args) {
@@ -8,5 +8,6 @@ public class Main {
         System.out.println("" + System.getProperty("os.name")); // Da el nombre del sistema operativo
         System.out.println("" + System.getProperty("user.home"));
         System.out.println("" + System.getProperty("user.dir")); // Donde se ejecuto la aplicación
+
     }
 }
