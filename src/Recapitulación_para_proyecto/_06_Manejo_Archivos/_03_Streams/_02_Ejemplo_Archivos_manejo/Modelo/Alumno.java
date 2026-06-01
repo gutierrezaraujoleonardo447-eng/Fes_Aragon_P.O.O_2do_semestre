@@ -1,4 +1,4 @@
-package Recapitulación_para_proyecto._06_Manejo_Archivos._03_Streams._02_Ejemplo_Archivos_manejo;
+package Recapitulación_para_proyecto._06_Manejo_Archivos._03_Streams._02_Ejemplo_Archivos_manejo.Modelo;
 
 import java.io.Serializable;
 import lombok.*;
